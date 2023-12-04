@@ -39,3 +39,7 @@ form button {
 form button:focus {
   outline: 3px solid #708ef9; 
 }
+
+.counter-negative {
+  color: red;
+}
