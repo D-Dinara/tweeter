@@ -34,6 +34,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
+      <!-- logo -->
       <span>tweeter</span>
       <div>
         <p><b>Write</b> a new tweet</p>
@@ -52,17 +53,21 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <!-- Section contains a form for creating new tweets -->
+      <!-- Section: New Tweet Form -->
       <section class="new-tweet">
         <form method="POST" action="/tweets">
+          <!-- Label for the tweet text input -->
           <label for="tweet-text">What are you humming about?</label>
+          <!-- Textarea for composing the tweet -->
           <textarea name="text" id="tweet-text"></textarea>
+          <!-- Tweet submission button and character counter -->
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+
       <!-- Section contains created tweets -->
       <section class="tweet-container">
         <article class="tweet">
