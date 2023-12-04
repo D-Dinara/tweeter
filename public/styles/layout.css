@@ -25,11 +25,13 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ /* Default padding and margin for all elements */
  * {
   padding: 0;
   margin: 0;
  }
 
+ /* Styles for main container */
  main {
   width: 90%;
   margin: 0 auto;

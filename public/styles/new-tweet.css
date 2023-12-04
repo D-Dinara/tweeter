@@ -1,3 +1,4 @@
+/* Styles for the entire form container */
 form {
   display: flex;
   flex-direction: column;
@@ -5,14 +6,16 @@ form {
   padding: 20px 0;
 }
 
+/* Styles for labels within the form */
 label {
   font-weight: 600;
 }
 
+/* Styles for textarea input in the form */
 textarea {
   border: none;
   background-color: #f4f1ec;
-  border-bottom: 3px solid black;
+  border-bottom: 5px solid #474747;
   padding: 10px 0;  
   font-weight: 600;
 }
@@ -21,6 +24,7 @@ textarea:focus {
   outline: none;
 }
 
+/* Styles for button and characters counter within the form */
 form div {
   display: flex;
   justify-content: space-between;

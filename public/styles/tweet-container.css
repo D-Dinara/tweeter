@@ -1,0 +1,75 @@
+/* Style for the tweet container */
+.tweet {
+  border: 5px solid #474747;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.tweet:hover {
+  box-shadow: 10px 10px #b8bed0;
+}
+
+/* Styles for the header within the tweet container */
+article.tweet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Styles for the author section within the tweet header */
+.tweet-author {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles for the user handle within the tweet header */
+.user-handle {
+  color: #b8bed0;
+}
+
+/* Styles for the author's avatar within the tweet header */
+.tweet-author img {
+  margin-right: 10px;
+}
+
+/* Styles for the author's name within the tweet header */
+.tweet-author h3 {
+  font-weight: 300;
+}
+
+/* Styles for the tweet text content */
+.tweet-text {
+  font-weight: 600;
+  margin: 10px 0;
+  padding: 20px;
+}
+
+/* Styles for the horizontal line within the tweet container */
+article.tweet hr {
+  background-color:#474747;;
+  height: 2.5px;
+}
+
+/* Styles for the footer within the tweet container */
+article.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Styles for the time information within the tweet footer */
+.tweet-time {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Styles for icons within the tweet container */
+.icon {
+  color: #4056A1;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #d99b27;
+}

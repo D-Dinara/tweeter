@@ -1,3 +1,5 @@
+/* Styles for navigation */
+
 nav {
   position: fixed;
   width: 100%;
@@ -10,17 +12,20 @@ nav {
   padding: 0 1.5em;
 }
 
+/* Styles for logo */
 nav span {
   font-family: 'Bungee', sans-serif;
 }
 
+/* Styles for "Write a new tweet" section of the navigation element*/
 nav div {
   display: flex;
   flex-direction:column;
   align-items: center;
 }
 
-nav div i {
+/* Styles for arrows */
+.fa-angles-down {
  color: red;
 }
 
