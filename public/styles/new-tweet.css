@@ -18,6 +18,7 @@ textarea {
   border-bottom: 5px solid #474747;
   padding: 10px 0;  
   font-weight: 600;
+  resize: vertical;
 }
 
 textarea:focus {
