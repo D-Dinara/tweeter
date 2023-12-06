@@ -45,7 +45,8 @@ $(document).ready(function() {
   $("#tweet-form").on("submit", function(event) {
     // Prevent the default form submission
     event.preventDefault();
-
+    // Hide the error message
+    $(".error-container").slideUp(200);
     // Get the textarea value and trim
     const tweetText = $("#tweet-text").val();
     const trimmedTweetText = tweetText.trim();
@@ -54,12 +55,24 @@ $(document).ready(function() {
 
     // Check if the textarea is empty
     if (!trimmedTweetText) {
-      return alert("The tweet is empty");
+      // Insert (or change) error message text in 200ms when the error element slides up
+      setTimeout(() => {
+        $(".error-text").text("The tweet is empty. Please, enter a message to post");
+      }, 200);
+      // Show the error message
+      $(".error-container").slideDown();
+      return;
     }
 
     // Check if text is too long
     if (tweetText.length > 140) {
-      return alert("The tweet is too long");
+      // Insert (or change) error message text in 200ms when the error element slides up
+      setTimeout(() => {
+        $(".error-text").text("The tweet is too long. Please, make your tweet shorter");
+      }, 200);
+      // Show the error message
+      $(".error-container").slideDown();
+      return;
     }
 
     // Serialize the form data
@@ -84,10 +97,7 @@ $(document).ready(function() {
             const newTweet = tweets[tweets.length - 1];
             renderTweets([newTweet]);
           });
-       
-
       });
-   
   });
 
   // The loadtweets function makes a GET request to /tweets and receives the array of tweets as JSON
