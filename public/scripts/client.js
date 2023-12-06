@@ -38,7 +38,20 @@ $(document).ready(function() {
   $("#tweet-form").on("submit", function(event) {
     // Prevent the default form submission
     event.preventDefault();
-    
+
+    // Get the textarea value and trim
+    const tweetText = $('#tweet-text').val().trim();
+
+    // Check if the textarea is empty
+    if (!tweetText) {
+      return alert("The tweet is empty");
+    }
+
+    // Check if text is too long
+    if (tweetText.length > 140) {
+      return alert("The tweet is too long");
+    }
+
     // Serialize the form data
     const data = $(this).serialize();
     // Send a POST request to the server
