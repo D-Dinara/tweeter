@@ -1,29 +1,3 @@
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 $(document).ready(function() {
   //The createTweetElement function takes in a tweet object
   // and returns a tweet <article> element containing the entire HTML structure of the tweet
@@ -40,7 +14,7 @@ $(document).ready(function() {
     <p class="tweet-text">${tweet.content.text}</p>
     <hr>
     <footer>
-      <p class="tweet-time">${tweet.created_at}</p>
+      <p class="tweet-time">${timeago.format(tweet.created_at)}</p>
       <div>
         <i class="icon fa-solid fa-flag"></i>
         <i class="icon fa-solid fa-retweet"></i>
@@ -59,12 +33,12 @@ $(document).ready(function() {
       $('#tweets-container').append($tweet);
     });
   };
-  renderTweets(data);
 
   // Attach a submit event handler to the form
   $("#tweet-form").on("submit", function(event) {
     // Prevent the default form submission
     event.preventDefault();
+    
     // Serialize the form data
     const data = $(this).serialize();
     // Send a POST request to the server
@@ -74,4 +48,13 @@ $(document).ready(function() {
       data,
     });
   });
+
+  // The loadtweets function makes a GET request to /tweets and receives the array of tweets as JSON
+  const loadTweets = function() {
+    $.ajax("/tweets", { method: 'GET' })
+      .then(function(tweets) {
+        renderTweets(tweets);
+      });
+  };
+  loadTweets();
 });
