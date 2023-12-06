@@ -40,10 +40,11 @@ $(document).ready(function() {
     event.preventDefault();
 
     // Get the textarea value and trim
-    const tweetText = $('#tweet-text').val().trim();
+    const tweetText = $('#tweet-text').val();
+    const trimmedTweetText = tweetText.trim();
 
     // Check if the textarea is empty
-    if (!tweetText) {
+    if (!trimmedTweetText) {
       return alert("The tweet is empty");
     }
 
@@ -54,12 +55,23 @@ $(document).ready(function() {
 
     // Serialize the form data
     const data = $(this).serialize();
-    // Send a POST request to the server
+
+    // Send a POST request to the server to save the new tweet
     $.ajax({
       url: "/tweets",
       method: "POST",
-      data,
-    });
+      data
+    })
+      .done(function() {
+        // send the GET request to the server to get the tweets
+        $.ajax("/tweets", { method: 'GET' })
+          .then(function(tweets) {
+            // Render the last tweet
+            const newTweet = tweets[tweets.length - 1];
+            renderTweets([newTweet]);
+          });
+      });
+   
   });
 
   // The loadtweets function makes a GET request to /tweets and receives the array of tweets as JSON
