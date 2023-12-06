@@ -60,4 +60,18 @@ $(document).ready(function() {
     });
   };
   renderTweets(data);
+
+  // Attach a submit event handler to the form
+  $("#tweet-form").on("submit", function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    // Serialize the form data
+    const data = $(this).serialize();
+    // Send a POST request to the server
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data,
+    });
+  });
 });
