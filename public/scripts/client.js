@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
   //The createTweetElement function takes in a tweet object
   // and returns a tweet <article> element containing the entire HTML structure of the tweet
@@ -30,7 +32,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      $("#tweets-container").append($tweet);
     });
   };
 
@@ -40,8 +42,10 @@ $(document).ready(function() {
     event.preventDefault();
 
     // Get the textarea value and trim
-    const tweetText = $('#tweet-text').val();
+    const tweetText = $("#tweet-text").val();
     const trimmedTweetText = tweetText.trim();
+    // define the counter
+    const $counter = $(this).find('.counter');
 
     // Check if the textarea is empty
     if (!trimmedTweetText) {
@@ -55,6 +59,7 @@ $(document).ready(function() {
 
     // Serialize the form data
     const data = $(this).serialize();
+    
 
     // Send a POST request to the server to save the new tweet
     $.ajax({
@@ -63,6 +68,10 @@ $(document).ready(function() {
       data
     })
       .done(function() {
+        // Reset the textarea
+        $("#tweet-text").val("");
+        // Reset the counter
+        $counter.text(140);
         // send the GET request to the server to get the tweets
         $.ajax("/tweets", { method: 'GET' })
           .then(function(tweets) {
@@ -70,6 +79,8 @@ $(document).ready(function() {
             const newTweet = tweets[tweets.length - 1];
             renderTweets([newTweet]);
           });
+       
+
       });
    
   });
