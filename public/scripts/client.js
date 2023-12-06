@@ -1,6 +1,11 @@
-
-
 $(document).ready(function() {
+// the escape function takes in a string and re-encode it so that unsafe characters are converted into a safe encoded representation
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //The createTweetElement function takes in a tweet object
   // and returns a tweet <article> element containing the entire HTML structure of the tweet
   const createTweetElement = function(tweet) {
@@ -13,7 +18,7 @@ $(document).ready(function() {
       </div>
       <h3 class="user-handle">${tweet.user.handle}</h3>
     </header>
-    <p class="tweet-text">${tweet.content.text}</p>
+    <p class="tweet-text">${escape(tweet.content.text)}</p>
     <hr>
     <footer>
       <p class="tweet-time">${timeago.format(tweet.created_at)}</p>
