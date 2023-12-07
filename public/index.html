@@ -38,10 +38,10 @@
     <nav>
       <!-- logo -->
       <span>tweeter</span>
-      <div>
+      <button id="form-toggle-btn">
         <p><b>Write</b> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
-      </div>
+      </button>
     </nav>
 
     <header class="profile-header">
@@ -56,7 +56,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <!-- Section: New Tweet Form -->
-      <section class="new-tweet">
+      <section id="new-tweet">
         <div class="error-container">
           <div class = "error-message">
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -80,6 +80,11 @@
       <!-- Section contains created tweets -->
       <section id="tweets-container"></section>
     </main>
+
+    <button id="go-up-btn">
+      <i class="fa-solid fa-angles-up"></i>
+    </button>
+    
   </body>
 </html>
 

@@ -7,7 +7,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
 }
@@ -15,13 +14,23 @@ nav {
 /* Styles for logo */
 nav span {
   font-family: 'Bungee', sans-serif;
+  font-size: 1.5em;
 }
 
 /* Styles for "Write a new tweet" section of the navigation element*/
-nav div {
+#form-toggle-btn {
   display: flex;
   flex-direction:column;
   align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  width: 220px;
+}
+
+#form-toggle-btn:hover {
+  font-size: 1.04em;
 }
 
 /* Styles for arrows */
@@ -29,3 +38,17 @@ nav div {
  color: red;
 }
 
+#go-up-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+  background-color: red;
+  width: 85px;
+  height: 85px;
+  border: none;
+}
+
+.fa-angles-up {
+  color: #FFFFFF;
+}

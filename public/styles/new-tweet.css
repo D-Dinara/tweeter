@@ -1,3 +1,8 @@
+#new-tweet {
+  display: none;
+}
+
+
 /* Styles for error message container */
 .error-container {
   display: none;
