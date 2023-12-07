@@ -108,13 +108,6 @@ $(document).ready(function() {
       });
   };
   loadTweets();
-
-  // Form toggle implementation
-  $("#form-toggle-btn").on("click", function() {
-    $("#new-tweet").slideToggle();
-    $("#tweet-text").focus();
-  });
-   
 });
 
 

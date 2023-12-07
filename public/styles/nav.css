@@ -38,7 +38,12 @@ nav span {
  color: red;
 }
 
-#go-up-btn {
+#form-toggle-btn:hover .fa-angles-down {
+  color: #fa4646;
+}
+
+#scroll-top-btn {
+  display: none;
   position: fixed;
   bottom: 15px;
   right: 15px;
@@ -47,6 +52,11 @@ nav span {
   width: 85px;
   height: 85px;
   border: none;
+  cursor: pointer;
+}
+
+#scroll-top-btn:hover {
+  background-color: #fa4646;
 }
 
 .fa-angles-up {
