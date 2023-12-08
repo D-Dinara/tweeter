@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
   });
 
-  // Scroll to top and enable the textarea when the scroll-up button is clicked
+  // Scroll to top and enable the textarea when the scroll-top button is clicked
   $("#scroll-top-btn").on("click", function() {
     $("html").scrollTop(0);
     $("#new-tweet").slideDown(0);
@@ -25,4 +25,19 @@ $(document).ready(function() {
     $("#form-toggle-btn").show(0);
     $("#scroll-top-btn").hide(0);
   });
+
+
+
+
+  const bounceArrows = function() {
+    $(".fa-angles-down").animate({ paddingTop: "-=10px" }, 600, "linear", function() {
+      $(this).animate({ paddingTop: "+=10px" }, 600, "linear", function() {
+        // Recursively call the function to create a bounce effect
+        bounceArrows();
+      });
+    });
+  };
+
+  // Start the bounce effect when the document is ready
+  bounceArrows();
 });

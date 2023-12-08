@@ -3,9 +3,10 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,27 +14,63 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
- /* Default padding and margin for all elements */
- * {
+/* Default padding and margin for all elements */
+* {
   padding: 0;
   margin: 0;
- }
+}
 
- /* Styles for main container */
- main {
+/* Styles for main container */
+main {
   width: 90%;
-  margin: 0 auto;
   background-color: #f4f1ec;
- }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles for screens with minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  .flex-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 120px;
+  }
+  .profile-header {
+    width: 30%;
+    height: 400px;
+    padding-top: 0;
+    margin: 50px 10px 0 50px;
+  }
+  main {
+    width: 50%;
+    margin: 30px 50px 0 10px;
+  }
+  nav {
+    background-color: #4056A1;
+  }
+}
+/* Styles for screens with maximum width of 500px */
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 0.95em;
+  }
+  .tweet {
+    padding: 10px;
+    margin: 15px 0;
+  }
+}

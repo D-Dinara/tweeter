@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 /* Styles for error message container */
 .error-container {
   display: none;
@@ -24,7 +23,6 @@
 }
 
 /* Styles for the entire form container */
-
 form {
   display: flex;
   flex-direction: column;
@@ -35,6 +33,7 @@ form {
 /* Styles for labels within the form */
 label {
   font-weight: 600;
+  font-size: 1.2em;
 }
 
 /* Styles for textarea input in the form */
@@ -42,7 +41,7 @@ textarea {
   border: none;
   background-color: #f4f1ec;
   border-bottom: 5px solid #474747;
-  padding: 10px 0;  
+  padding: 10px 0;
   font-weight: 600;
   resize: vertical;
 }
@@ -55,20 +54,25 @@ textarea:focus {
 form div {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   margin: 10px 0;
 }
 
 form button {
- border: none;
- background-color: #4056A1;
- color: #FFFFFF;
- padding: 5px 10px;
- cursor: pointer;
+  border: none;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.2em;
 }
 
 form button:focus {
-  outline: 3px solid #708ef9; 
+  outline: 3px solid #708ef9;
+}
+
+.counter {
+  font-size: 1.2em;
 }
 
 .counter-negative {

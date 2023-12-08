@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets-container.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,51 +41,60 @@
       <span>tweeter</span>
       <button id="form-toggle-btn">
         <p><b>Write</b> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i>
+        <div>
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+        
       </button>
     </nav>
-
-    <header class="profile-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
-          <h2 class="full-name"><span>Dinara</span> Dvortsova</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- Section: New Tweet Form -->
-      <section id="new-tweet">
-        <div class="error-container">
-          <div class = "error-message">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <p class="error-text"></p>
-            <i class="fa-solid fa-triangle-exclamation"></i>
-          </div>
+    <!-- start of flex-container for styling -->
+    <div class="flex-container"> 
+      
+      <header class="profile-header">
+        <div>
+            <img src="/images/profile-hex.png"> 
         </div>
-        <form id="tweet-form" method="POST" action="/tweets">
-          <!-- Label for the tweet text input -->
-          <label for="tweet-text">What are you humming about?</label>
-          <!-- Textarea for composing the tweet -->
-          <textarea name="text" id="tweet-text"></textarea>
-          <!-- Tweet submission button and character counter -->
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <div>
+            <h2 class="full-name"><span>Dinara</span> Dvortsova</h2>
+        </div>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <!-- Section: New Tweet Form -->
+        <section id="new-tweet">
+          <div class="error-container">
+            <div class = "error-message">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <p class="error-text"></p>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
           </div>
-        </form>
-      </section>
 
-      <!-- Section contains created tweets -->
-      <section id="tweets-container"></section>
-    </main>
+          <form id="tweet-form" method="POST" action="/tweets">
+            <!-- Label for the tweet text input -->
+            <label for="tweet-text">What are you humming about?</label>
+            <!-- Textarea for composing the tweet -->
+            <textarea name="text" id="tweet-text"></textarea>
+            <!-- Tweet submission button and character counter -->
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
 
-    <button id="scroll-top-btn">
-      <i class="fa-solid fa-angles-up"></i>
-    </button>
+        <!-- Section contains created tweets -->
+        <section id="tweets-container"></section>
 
+        <!-- Button that scrolls to the top of the page and enables the textarea -->
+        <button id="scroll-top-btn">
+          <i class="fa-solid fa-angles-up"></i>
+        </button>
+      </main>
+    </div>
+    <!-- end of flex-container --> 
   </body>
 </html>
+
 
