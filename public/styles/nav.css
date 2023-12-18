@@ -8,6 +8,7 @@ nav {
   height: 120px;
   color: #ffffff;
   padding: 0 1.5em;
+  background-color: #4056A1;
   /* Styles for logo */
 }
 nav span {
@@ -72,10 +73,10 @@ nav span {
   color: #ffffff;
 }
 
-/* Styles for screens with minimum width of 1024px */
-@media only screen and (min-width: 1024px) {
+/* Styles for screens with maximum width of 1023px */
+@media only screen and (max-width: 1023px) {
   nav {
-    background-color: #4056A1;
+    background-color: transparent;
   }
 }
 /* Styles for screens with maximum width of 500px */

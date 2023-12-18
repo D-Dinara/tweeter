@@ -43,6 +43,7 @@ $(document).ready(function() {
   
   // The loadtweets function makes a GET request to /tweets and receives the array of tweets as JSON
   const loadTweets = function() {
+    // Emty the tweetes container before rendering the tweets
     $("#tweets-container").empty();
     $.ajax("/tweets", { method: 'GET' })
       .then(function(tweets) {

@@ -9,6 +9,7 @@ nav {
   height: 120px;
   color: $white;
   padding: 0 1.5em;
+  background-color: $blue;
 
   /* Styles for logo */
   span {
@@ -71,10 +72,10 @@ nav {
   color: $white;
 }
 
-/* Styles for screens with minimum width of 1024px */
-@media only screen and (min-width: 1024px) {
+/* Styles for screens with maximum width of 1023px */
+@media only screen and (max-width: 1023px) {
   nav {
-    background-color: $blue;
+    background-color: transparent;
   }
 }
 
