@@ -6,9 +6,10 @@ $(document).ready(function() {
   });
 
   // Show/hide buttons based on scroll position
+  $("#scroll-top-btn").hide();
   $(this).on("scroll", function() {
-    // If the page is scrolled down for more than 120px (the nav height) show the scroll-up button
-    if ($(this).scrollTop() > 120) {
+    // If the page is scrolled down for more than 50px show the scroll-up button
+    if ($(this).scrollTop() > 50) {
       $("#form-toggle-btn").hide(0);
       $("#scroll-top-btn").show(0);
     } else {
@@ -27,8 +28,7 @@ $(document).ready(function() {
   });
 
 
-
-
+  // Arrows bounce effect
   const bounceArrows = function() {
     $(".fa-angles-down").animate({ paddingTop: "-=10px" }, 600, "linear", function() {
       $(this).animate({ paddingTop: "+=10px" }, 600, "linear", function() {

@@ -1,63 +1,62 @@
+@import "_variables";
+@import "_mixins";
+
 /* Styles for navigation */
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(center, space-between);
   position: fixed;
   width: 100%;
   height: 120px;
-  color: #ffffff;
+  color: $white;
   padding: 0 1.5em;
+
   /* Styles for logo */
-}
-nav span {
-  font-family: "Bungee", sans-serif;
-  font-size: 2em;
-  margin-right: 10px;
-}
+  span {
+    font-family: $secondaryFont;
+    font-size: 2em;
+    margin-right: 10px;
+  }
+} 
 
 /* Styles for "Write a new tweet" section of the navigation element*/
 #form-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(center, center);
   flex-direction: column;
   cursor: pointer;
   border: none;
   background-color: transparent;
-  color: #ffffff;
+  color: $white;
   width: 220px;
   font-size: 1.05em;
-}
-#form-toggle-btn div {
-  height: 30px;
-}
 
-#form-toggle-btn:hover {
+  div {
+    height: 30px;
+  }
+} 
+
+#form-toggle-btn:hover { 
   font-size: 1.1em;
-}
+} 
 
 /* Styles for arrows */
 .fa-angles-down {
   left: 50%;
   bottom: 0;
-  color: #ff0000;
+  color: $red;
 }
 
 #form-toggle-btn:hover .fa-angles-down {
-  color: #fa4646;
+  color: $redOnHover;
 }
 
 /* Styles for scroll-top button */
 #scroll-top-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(center, center);
   position: fixed;
   bottom: 15px;
   right: 15px;
   border-radius: 50%;
-  background-color: #ff0000;
+  background-color: $red;
   width: 85px;
   height: 85px;
   border: none;
@@ -65,19 +64,20 @@ nav span {
 }
 
 #scroll-top-btn:hover {
-  background-color: #fa4646;
+  background-color: $redOnHover;
 }
 
 .fa-angles-up {
-  color: #ffffff;
+  color: $white;
 }
 
 /* Styles for screens with minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
   nav {
-    background-color: #4056A1;
+    background-color: $blue;
   }
 }
+
 /* Styles for screens with maximum width of 500px */
 @media only screen and (max-width: 500px) {
   #scroll-top-btn {
@@ -87,3 +87,4 @@ nav span {
     height: 60px;
   }
 }
+

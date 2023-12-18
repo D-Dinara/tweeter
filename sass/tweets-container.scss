@@ -1,57 +1,56 @@
+@import "_variables";
+@import "_mixins";
+
 /* Style for the tweets container */
 .tweet {
-  border: 5px solid #545149;
+  border: 5px solid $primaryFontColor;
   padding: 30px;
   margin: 30px 0;
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px #b8bed0;
+  box-shadow: 10px 10px $tweetOnHoverColor;
 }
 
 /* Styles for the header within the tweet container */
-article.tweet {
+article.tweet  {
+  header {
+    @include flex(center, space-between);
+    margin-bottom: 30px;
+  }
   /* Styles for the horizontal line within the tweet container */
+  hr {
+    background-color: $primaryFontColor;;
+    height: 2.5px;
+  }
   /* Styles for the footer within the tweet container */
-}
-article.tweet header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-article.tweet hr {
-  background-color: #545149;
-  height: 2.5px;
-}
-article.tweet footer {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 10px 20px;
+  footer {
+    @include flex(flex-start, space-between);
+    padding: 10px 20px;
+  }
 }
 
 /* Styles for the author section within the tweet header */
-.tweet-author {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.tweet-author { 
+  @include flex(center, flex-start);
+  
   /* Styles for the author's avatar within the tweet header */
-  /* Styles for the author's name within the tweet header */
-}
-.tweet-author img {
-  margin-right: 10px;
-}
-.tweet-author h3 {
-  font-weight: 300;
-  margin-right: 5px;
-}
+  img {
+    margin-right: 10px;
+  }
 
-/* Styles for the user handle within the tweet header */
-.user-handle {
-  color: #b8bed0;
-  text-align: center;
-}
+  /* Styles for the author's name within the tweet header */
+  h3 {
+    font-weight: 300;
+    margin-right: 5px;
+  }
+} 
+
+/* Styles for the user handle within the tweet header */ 
+.user-handle { 
+  color: $tweetOnHoverColor; 
+  text-align: center; 
+} 
 
 /* Styles for the tweet text content */
 .tweet-text {
@@ -69,12 +68,12 @@ article.tweet footer {
 
 /* Styles for icons within the tweet container */
 .icon {
-  color: #4056A1;
+  color: $blue;
   cursor: pointer;
 }
 
 .icon:hover {
-  color: #d99b27;
+  color: $headerBackgroundColor;
 }
 
 /* Styles for screens with maximum width of 500px */

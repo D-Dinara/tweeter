@@ -1,0 +1,7 @@
+// The mixin aligns and justifies content based on the $align and $justify variables
+
+@mixin flex ($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}

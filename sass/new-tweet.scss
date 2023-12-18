@@ -1,3 +1,6 @@
+@import "_variables";
+@import "_mixins";
+
 #new-tweet {
   display: none;
 }
@@ -8,10 +11,8 @@
 }
 
 .error-message {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 4px solid #ff0000;
+  @include flex(center, space-between);
+  border: 4px solid $red;
   padding: 5px;
   margin-top: 10px;
   text-align: center;
@@ -20,7 +21,7 @@
 }
 
 .fa-triangle-exclamation {
-  color: #ff0000;
+  color: $red;
 }
 
 /* Styles for the entire form container */
@@ -29,26 +30,27 @@ form {
   flex-direction: column;
   font-weight: 600;
   padding: 20px 0;
+
   /* Styles for button and characters counter within the form */
-}
-form div {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  font-family: "Bungee", sans-serif;
-  margin: 10px 0;
-}
-form button {
-  border: none;
-  background-color: #4056A1;
-  color: #ffffff;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 1.2em;
-}
-form button:focus {
-  outline: 3px solid #708ef9;
-}
+  div {
+    @include flex(flex-start, space-between);
+    font-family: $secondaryFont;
+    margin: 10px 0;
+  }  
+
+  button {
+    border: none;
+    background-color: $blue;
+    color: $white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+
+  button:focus {
+    outline: 3px solid $blueOnFocus;
+  }
+} 
 
 /* Styles for labels within the form */
 label {
@@ -59,8 +61,8 @@ label {
 /* Styles for textarea input in the form */
 textarea {
   border: none;
-  background-color: #f4f1ec;
-  border-bottom: 5px solid #545149;
+  background-color: $primaryBackgroundColor;
+  border-bottom: 5px solid $primaryFontColor;
   padding: 10px 0;
   font-weight: 600;
   resize: vertical;
@@ -75,5 +77,6 @@ textarea:focus {
 }
 
 .counter-negative {
-  color: #ff0000;
+  color: $red;
 }
+ 

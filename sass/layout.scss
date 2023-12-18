@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 
@@ -14,11 +14,15 @@ html {
 /*
  * Global layout stuff
  */
+
+@import "_variables";
+@import "_mixins";
+
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $primaryFontColor;
+  background-color: $primaryBackgroundColor;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: $primaryFont;
 }
 
 /*
@@ -33,33 +37,29 @@ body {
 /* Styles for main container */
 main {
   width: 90%;
-  background-color: #f4f1ec;
+  background-color: $primaryBackgroundColor;
 }
 
 .flex-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include flex(center, flex-start);
   flex-direction: column;
-}
+} 
 
 /* Styles for screens with minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
   .flex-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    @include flex(flex-start, space-between);
     flex-direction: row;
     padding-top: 120px;
-  }
+  } 
   main {
     width: 50%;
     margin: 30px 50px 0 10px;
   }
-}
+}  
 /* Styles for screens with maximum width of 500px */
 @media only screen and (max-width: 500px) {
   body {
     font-size: 0.95em;
   }
-}
+} 

@@ -33,13 +33,23 @@ $(document).ready(function() {
     return $tweet;
   };
   
-  //The renderTweets function takes in an array of tweet objects and appends tweet to the #tweets-container
+  //The renderTweets function takes in an array of tweet objects and preppends tweet to the #tweets-container
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
-      $("#tweets-container").append($tweet);
+      $("#tweets-container").prepend($tweet);
     });
   };
+  
+  // The loadtweets function makes a GET request to /tweets and receives the array of tweets as JSON
+  const loadTweets = function() {
+    $("#tweets-container").empty();
+    $.ajax("/tweets", { method: 'GET' })
+      .then(function(tweets) {
+        renderTweets(tweets);
+      });
+  };
+  loadTweets();
 
   // Attach a submit event handler to the form
   $("#tweet-form").on("submit", function(event) {
@@ -78,36 +88,21 @@ $(document).ready(function() {
     // Serialize the form data
     const data = $(this).serialize();
     
-
     // Send a POST request to the server to save the new tweet
     $.ajax({
       url: "/tweets",
       method: "POST",
       data
     })
-      .done(function() {
+      .then(function() {
         // Reset the textarea
         $("#tweet-text").val("");
         // Reset the counter
         $counter.text(140);
-        // send the GET request to the server to get the tweets
-        $.ajax("/tweets", { method: 'GET' })
-          .then(function(tweets) {
-            // Render the last tweet
-            const newTweet = tweets[tweets.length - 1];
-            renderTweets([newTweet]);
-          });
+        // send the GET request to the server and render the tweets
+        loadTweets();
       });
   });
-
-  // The loadtweets function makes a GET request to /tweets and receives the array of tweets as JSON
-  const loadTweets = function() {
-    $.ajax("/tweets", { method: 'GET' })
-      .then(function(tweets) {
-        renderTweets(tweets);
-      });
-  };
-  loadTweets();
 });
 
 
